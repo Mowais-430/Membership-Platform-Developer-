@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Awais - Membership & Community Platform Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        a {
+            color: #1F3864;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #2c5aa0;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1F3864 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .contact-info a:hover {
+            opacity: 1;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            color: #1F3864;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #1F3864;
+        }
+        
+        h3 {
+            color: #2c5aa0;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .project-header {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-bottom: 2px solid #1F3864;
+        }
+        
+        .project-header h4 {
+            color: #1F3864;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .project-type {
+            font-size: 0.85rem;
+            color: #2c5aa0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .project-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .project-features {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .feature-tag {
+            display: inline-block;
+            background: #e8f0f7;
+            color: #1F3864;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+            font-size: 0.85rem;
+        }
+        
+        .tech-stack {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .tech-stack strong {
+            color: #1F3864;
+        }
+        
+        .capabilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .capability-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #1F3864;
+        }
+        
+        .capability-box h4 {
+            color: #1F3864;
+            margin-bottom: 0.8rem;
+        }
+        
+        .capability-box ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .capability-box li {
+            padding: 0.3rem 0;
+        }
+        
+        .capability-box li:before {
+            content: "✓ ";
+            color: #2c5aa0;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #1F3864;
+        }
+        
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #1F3864;
+            border-radius: 50%;
+            margin-left: -7px;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            margin-left: 2rem;
+        }
+        
+        .timeline-content h4 {
+            color: #1F3864;
+            margin-bottom: 0.3rem;
+        }
+        
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 600;
+        }
+        
+        .proposal-section {
+            background: #f0f6ff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .proposal-section h3 {
+            color: #1F3864;
+            margin-top: 0;
+        }
+        
+        .proposal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .proposal-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-top: 3px solid #2c5aa0;
+        }
+        
+        .proposal-item strong {
+            color: #1F3864;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: #1F3864;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: #e8f0f7;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Muhammad Awais</h1>
+        <p>Membership Platform Developer | WordPress Specialist</p>
+        <div class="contact-info">
+            <span>📧 awaisjamil430@gmail.com</span>
+            <span>📱 +92 340 5874431</span>
+            <span><a href="https://linkedin.com/in/awais-jamil7">LinkedIn Profile</a></span>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p class="intro">
+                I'm a full-stack developer with 5+ years specialising in building membership platforms, community sites, and secure payment systems. My recent work includes developing <strong>Aariyo</strong>, a multi-tenant AI community platform with member management, subscription billing, and event coordination, and <strong>medelz.com</strong>, a WooCommerce platform with role-based user portals and analytics dashboards. I'm experienced with WordPress, secure REST APIs, GDPR-aware data handling, and creating systems that non-technical teams can manage independently.
+            </p>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-type">Community Platform</div>
+                        <h4>Aariyo (aariyo.ai)</h4>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            A multi-tenant AI assistant platform for discussion forums. Enables forum owners to automate member engagement, publish content, and manage subscriptions. Similar to your need: member portals, subscription management, event coordination.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Member Management</span>
+                            <span class="feature-tag">Stripe Billing</span>
+                            <span class="feature-tag">Event Scheduling</span>
+                            <span class="feature-tag">API Integrations</span>
+                            <span class="feature-tag">Multi-Tenant Architecture</span>
+                        </div>
+                        <div class="tech-stack">
+                            <strong>Tech:</strong> WordPress, PHP, Laravel REST APIs, Stripe, Vue.js, MySQL
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-type">E-Commerce Platform</div>
+                        <h4>medelz.com</h4>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            A creative marketplace platform for artists. Features role-based access (sellers vs. buyers), member dashboards, secure payment processing, and real-time notification systems.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">User Portals</span>
+                            <span class="feature-tag">Role-Based Access</span>
+                            <span class="feature-tag">Payment Processing</span>
+                            <span class="feature-tag">Analytics Dashboards</span>
+                            <span class="feature-tag">Responsive Design</span>
+                        </div>
+                        <div class="tech-stack">
+                            <strong>Tech:</strong> WordPress, WooCommerce, Stripe, React, REST APIs, Figma-to-Code
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-type">Event Management</div>
+                        <h4>Conference & Ticketing Systems</h4>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Built event management and ticketing infrastructure for multiple client projects. Includes member registration workflows, payment processing, and communication pipelines.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Event Registration</span>
+                            <span class="feature-tag">Ticketing</span>
+                            <span class="feature-tag">Payment Gating</span>
+                            <span class="feature-tag">Email Campaigns</span>
+                            <span class="feature-tag">Attendee Tracking</span>
+                        </div>
+                        <div class="tech-stack">
+                            <strong>Tech:</strong> WordPress, Laravel, Stripe, SendGrid, Firebase
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Relevant Expertise for Your Project</h2>
+            
+            <div class="capabilities">
+                <div class="capability-box">
+                    <h4>Membership Management</h4>
+                    <ul>
+                        <li>Annual dues and donation processing</li>
+                        <li>Member tier management</li>
+                        <li>Self-service member portals</li>
+                        <li>Membership renewals & cancellations</li>
+                    </ul>
+                </div>
+
+                <div class="capability-box">
+                    <h4>Payment & Billing Systems</h4>
+                    <ul>
+                        <li>Stripe subscription management</li>
+                        <li>Recurring billing automation</li>
+                        <li>Webhook-based event handling</li>
+                        <li>Secure payment processing</li>
+                    </ul>
+                </div>
+
+                <div class="capability-box">
+                    <h4>Member Communications</h4>
+                    <ul>
+                        <li>Email campaign infrastructure</li>
+                        <li>Newsletter automation (SendGrid)</li>
+                        <li>Member-only content distribution</li>
+                        <li>Event notifications & reminders</li>
+                    </ul>
+                </div>
+
+                <div class="capability-box">
+                    <h4>Restricted Access & Security</h4>
+                    <ul>
+                        <li>Members-only portal areas</li>
+                        <li>Role-based access control (JWT)</li>
+                        <li>Secure authentication systems</li>
+                        <li>Data encryption & protection</li>
+                    </ul>
+                </div>
+
+                <div class="capability-box">
+                    <h4>GDPR & Data Compliance</h4>
+                    <ul>
+                        <li>GDPR-aware data handling</li>
+                        <li>Privacy policy implementation</li>
+                        <li>User consent management</li>
+                        <li>Audit logging & tracking</li>
+                    </ul>
+                </div>
+
+                <div class="capability-box">
+                    <h4>Accessibility & Quality</h4>
+                    <ul>
+                        <li>WCAG 2.1 compliance</li>
+                        <li>Screen reader testing</li>
+                        <li>Responsive mobile design</li>
+                        <li>Cross-browser compatibility</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Approach & Recommendations</h2>
+            
+            <h3>Platform Choice: WordPress + Custom Integration</h3>
+            <p>
+                I recommend WordPress hosted on an EU-based provider (WP Engine EU, Kinsta EU, or similar). WordPress offers:
+            </p>
+            <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                <li><strong>Flexibility:</strong> Easily adaptable for your membership, event, and mail campaign needs</li>
+                <li><strong>Cost-effective:</strong> Competitive build and hosting costs, no vendor lock-in</li>
+                <li><strong>Maintainability:</strong> Your team can manage content with Elementor and Gutenberg (visual builders)</li>
+                <li><strong>Plugin Ecosystem:</strong> Mature membership, payment, and email plugins with active communities</li>
+                <li><strong>EU Compliance:</strong> Many EU-hosted providers offer GDPR compliance and data residency</li>
+            </ul>
+
+            <h3>Recommended Tech Stack</h3>
+            <div class="proposal-section">
+                <h3 style="margin-top: 0; color: #1F3864;">Architecture Overview</h3>
+                <div class="proposal-grid">
+                    <div class="proposal-item">
+                        <strong>Hosting</strong>
+                        <p>WP Engine EU or Kinsta (EU-based, GDPR compliant)</p>
+                    </div>
+                    <div class="proposal-item">
+                        <strong>Membership Plugin</strong>
+                        <p>MemberPress or custom build (flexible, open)</p>
+                    </div>
+                    <div class="proposal-item">
+                        <strong>Payments</strong>
+                        <p>Stripe EU integration for secure processing</p>
+                    </div>
+                    <div class="proposal-item">
+                        <strong>Email Campaigns</strong>
+                        <p>SendGrid or Brevo (EU-based) for newsletters</p>
+                    </div>
+                    <div class="proposal-item">
+                        <strong>Events</strong>
+                        <p>Dryfta integration or custom event plugin</p>
+                    </div>
+                    <div class="proposal-item">
+                        <strong>Analytics</strong>
+                        <p>Built-in member reporting & insights dashboard</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Development & Maintenance Process</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Discovery & Planning (Weeks 1-2)</h4>
+                        <p class="timeline-date">Detailed requirements, wireframes, plugin selection</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Design & Approval (Weeks 3-5)</h4>
+                        <p class="timeline-date">High-fidelity designs with WCAG accessibility review</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Development (Weeks 6-14)</h4>
+                        <p class="timeline-date">Build membership, payments, portals, email infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Testing & Refinement (Weeks 15-18)</h4>
+                        <p class="timeline-date">Security audit, accessibility compliance, member testing</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Staff Training (Week 19-20)</h4>
+                        <p class="timeline-date">Hands-on training for content, member management, email campaigns</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Launch (Week 21-22)</h4>
+                        <p class="timeline-date">Go-live by July 1, 2027 with post-launch support</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Post-Launch Support & Training</h3>
+            <p>
+                I provide comprehensive staff training covering:
+            </p>
+            <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                <li>Elementor/Gutenberg content editing for non-technical team members</li>
+                <li>Member management (approvals, manual updates, renewals)</li>
+                <li>Email campaign creation and scheduling</li>
+                <li>Event registration and attendee tracking</li>
+                <li>Basic troubleshooting and support resources</li>
+            </ul>
+
+            <h3>Ongoing Maintenance Options</h3>
+            <p>
+                I'm available for continued support including:
+            </p>
+            <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                <li>Security updates and plugin maintenance</li>
+                <li>Performance monitoring and optimisation</li>
+                <li>Bug fixes and feature enhancements</li>
+                <li>Email and phone support for urgent issues</li>
+                <li>Annual GDPR/WCAG compliance audits</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Why Work With Me</h2>
+            
+            <div class="capabilities">
+                <div class="capability-box">
+                    <h4>Domain Expertise</h4>
+                    <p>5+ years building membership and community platforms. I understand the operational needs of organizations like yours.</p>
+                </div>
+
+                <div class="capability-box">
+                    <h4>End-to-End Owner</h4>
+                    <p>I handle design, development, compliance, and training. No handoffs—I'm accountable for the whole system.</p>
+                </div>
+
+                <div class="capability-box">
+                    <h4>Long-Term Partner</h4>
+                    <p>Available for ongoing maintenance, support, and evolution of your platform beyond launch.</p>
+                </div>
+
+                <div class="capability-box">
+                    <h4>Non-Technical Team Support</h4>
+                    <p>I design for your team's independence: clear admin interfaces, thorough documentation, and training so you're not dependent on me for day-to-day changes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Awais | Web Developer & Platform Specialist</p>
+        <p>
+            <a href="mailto:awaisjamil430@gmail.com">Email</a> | 
+            <a href="https://linkedin.com/in/awais-jamil7">LinkedIn</a> | 
+            <a href="tel:+923405874431">+92 340 5874431</a>
+        </p>
+    </footer>
+</body>
+</html>
